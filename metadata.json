@@ -1,0 +1,6 @@
+{
+  "name": "Mock Data Synthesizer",
+  "description": "Context-aware mock data synthesis from TypeScript interfaces and JSON schemas using Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
