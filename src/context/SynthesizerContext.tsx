@@ -35,7 +35,7 @@ export const SynthesizerProvider = ({ children }: { children: React.ReactNode })
   const [customInstruction, setCustomInstruction] = useState<string>("");
 
   // UI States
-  const [activeTab, setActiveTab] = useState<"prototype" | "grid" | "insights" | "integration">("prototype");
+  const [activeTab, setActiveTab] = useState<"prototype" | "grid" | "insights" | "integration" | "zod">("prototype");
   const [isSynthesizing, setIsSynthesizing] = useState<boolean>(false);
   const [synthesisProgress, setSynthesisProgress] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);

@@ -6,7 +6,8 @@ import {
   FileJson, 
   Download, 
   Database, 
-  Sparkles 
+  Sparkles,
+  ShieldAlert
 } from "lucide-react";
 import useSynthesizer from "../hooks/useSynthesizer";
 import SchemaConfigPanel from "./SchemaConfigPanel";
@@ -14,6 +15,7 @@ import DashboardPrototype from "./DashboardPrototype";
 import SheetExplorer from "./SheetExplorer";
 import SchemaInsightsPanel from "./SchemaInsightsPanel";
 import RawDataPanel from "./RawDataPanel";
+import ZodBoundarySandbox from "./ZodBoundarySandbox";
 
 const MainWorkspace = () => {
   const {
@@ -105,6 +107,22 @@ const MainWorkspace = () => {
               <FileJson className="w-3.5 h-3.5" aria-hidden="true" />
               Raw JSON &amp; Code
             </button>
+
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === "zod"}
+              aria-controls="tab-zod-content"
+              onClick={() => setActiveTab("zod")}
+              className={`py-2 px-3 md:px-4 text-xs font-semibold cursor-pointer border-b-2 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none transition-all flex items-center gap-1.5 ${
+                activeTab === "zod"
+                  ? "border-b-indigo-400 text-indigo-300"
+                  : "border-b-transparent text-pink-400 hover:text-pink-200"
+              }`}
+            >
+              <ShieldAlert className="w-3.5 h-3.5" aria-hidden="true" />
+              Zod Boundary Sandbox
+            </button>
           </nav>
 
           {/* Quick Export tools */}
@@ -161,6 +179,13 @@ const MainWorkspace = () => {
           {activeTab === "integration" && (
             <section id="tab-integration-content">
               <RawDataPanel />
+            </section>
+          )}
+
+          {/* 5. Zod Network Boundary Sandbox and Telemetry diagnostics */}
+          {activeTab === "zod" && (
+            <section id="tab-zod-content">
+              <ZodBoundarySandbox />
             </section>
           )}
 

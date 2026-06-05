@@ -13,7 +13,7 @@ interface UseSynthesisEngineProps {
   setSelectedRecordIndex: (idx: number | null) => void;
   setSynthesisProgress: (progress: string) => void;
   setSynthesizedResult: (result: SynthesizedData | null) => void;
-  setActiveTab: (tab: "prototype" | "grid" | "insights" | "integration") => void;
+  setActiveTab: (tab: "prototype" | "grid" | "insights" | "integration" | "zod") => void;
 }
 
 const useSynthesisEngine = ({

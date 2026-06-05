@@ -17,8 +17,8 @@ export interface SynthesizerContextType {
   setCustomInstruction: (instruction: string) => void;
 
   // UI state
-  activeTab: "prototype" | "grid" | "insights" | "integration";
-  setActiveTab: (tab: "prototype" | "grid" | "insights" | "integration") => void;
+  activeTab: "prototype" | "grid" | "insights" | "integration" | "zod";
+  setActiveTab: (tab: "prototype" | "grid" | "insights" | "integration" | "zod") => void;
   isSynthesizing: boolean;
   synthesisProgress: string;
   errorMessage: string | null;
